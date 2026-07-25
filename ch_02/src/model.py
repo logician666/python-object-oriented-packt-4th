@@ -3,11 +3,11 @@ Python 3 Object-Oriented Programming 4th ed.
 
 Chapter 2. Case Study
 """
+
 from __future__ import annotations
 from collections.abc import Iterator
 import datetime
 from typing import Optional, Union, Iterable
-
 
 class Sample:
     def __init__(
@@ -56,7 +56,7 @@ class Hyperparameter:
     """A hyperparameter value and the overall quality of the classification."""
 
     def __init__(self, k: int, training: "TrainingData") -> None:
-        self.k = k
+        self.k: int = k
         self.data: TrainingData = training
         self.quality: float
 

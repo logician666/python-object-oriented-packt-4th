@@ -3,6 +3,7 @@ Python 3 Object-Oriented Programming Case Study
 
 Chapter 4, Expecting the Unexpected
 """
+
 from __future__ import annotations
 import collections
 import datetime
@@ -288,17 +289,14 @@ class Minkowski(Distance):
     m: int
 
     def distance(self, s1: Sample, s2: Sample) -> float:
-        return (
-            sum(
-                [
-                    abs(s1.sepal_length - s2.sepal_length) ** self.m,
-                    abs(s1.sepal_width - s2.sepal_width) ** self.m,
-                    abs(s1.petal_length - s2.petal_length) ** self.m,
-                    abs(s1.petal_width - s2.petal_width) ** self.m,
-                ]
-            )
-            ** (1 / self.m)
-        )
+        return sum(
+            [
+                abs(s1.sepal_length - s2.sepal_length) ** self.m,
+                abs(s1.sepal_width - s2.sepal_width) ** self.m,
+                abs(s1.petal_length - s2.petal_length) ** self.m,
+                abs(s1.petal_width - s2.petal_width) ** self.m,
+            ]
+        ) ** (1 / self.m)
 
 
 class Euclidean(Minkowski):
@@ -363,17 +361,14 @@ class Minkowski_2(Distance):
     def distance(self, s1: Sample, s2: Sample) -> float:
         # Required to prevent Python from passing `self` as the first argument.
         summarize = self.reduction
-        return (
-            summarize(
-                [
-                    abs(s1.sepal_length - s2.sepal_length) ** self.m,
-                    abs(s1.sepal_width - s2.sepal_width) ** self.m,
-                    abs(s1.petal_length - s2.petal_length) ** self.m,
-                    abs(s1.petal_width - s2.petal_width) ** self.m,
-                ]
-            )
-            ** (1 / self.m)
-        )
+        return summarize(
+            [
+                abs(s1.sepal_length - s2.sepal_length) ** self.m,
+                abs(s1.sepal_width - s2.sepal_width) ** self.m,
+                abs(s1.petal_length - s2.petal_length) ** self.m,
+                abs(s1.petal_width - s2.petal_width) ** self.m,
+            ]
+        ) ** (1 / self.m)
 
 
 class Hyperparameter:

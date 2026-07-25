@@ -3,6 +3,7 @@ Python 3 Object-Oriented Programming Case Study
 
 Chapter 4, Expecting the Unexpected
 """
+
 from __future__ import annotations
 import base64
 import csv

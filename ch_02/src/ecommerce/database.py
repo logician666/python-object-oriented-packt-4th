@@ -3,6 +3,7 @@ Python 3 Object-Oriented Programming 4th ed.
 
 Chapter 2, Objects in Python.
 """
+
 from __future__ import annotations
 from typing import Optional, Any
 
