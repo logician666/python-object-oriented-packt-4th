@@ -55,3 +55,7 @@ commands =
 	{[base]commands}
 	python -m doctest --option ELLIPSIS docs/examples.md
 """
+
+[tool.basedpyright]
+venvPath = ".."
+venv = ".env_py39"

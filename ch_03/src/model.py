@@ -9,6 +9,7 @@ import collections
 import datetime
 from math import isclose, hypot
 from typing import (
+    override,
     cast,
     Any,
     Optional,
@@ -161,6 +162,7 @@ class Distance:
 
 
 class ED(Distance):
+    @override
     def distance(self, s1: Sample, s2: Sample) -> float:
         return hypot(
             s1.sepal_length - s2.sepal_length,
@@ -171,6 +173,7 @@ class ED(Distance):
 
 
 class MD(Distance):
+    @override
     def distance(self, s1: Sample, s2: Sample) -> float:
         return sum(
             [
@@ -183,6 +186,7 @@ class MD(Distance):
 
 
 class CD(Distance):
+    @override
     def distance(self, s1: Sample, s2: Sample) -> float:
         return max(
             [
@@ -193,8 +197,8 @@ class CD(Distance):
             ]
         )
 
-
 class SD(Distance):
+    @override
     def distance(self, s1: Sample, s2: Sample) -> float:
         return sum(
             [
